@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Pondok Pesantren - Dalam Pengembangan</title>
@@ -19,14 +19,14 @@
         margin: 0;
         padding: 0;
         font-family: "Segoe UI", system-ui, sans-serif;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
           url("lapangan.jpg") no-repeat center center/cover;
-        min-height: 100vh; /* Menggunakan min-height agar bisa scroll jika konten terlalu panjang */
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #fff;
-        /* overflow: hidden; Dihapus agar bisa di-scroll di perangkat kecil */
+        padding: 20px;
       }
 
       .container {
@@ -34,12 +34,12 @@
         width: 90%;
         max-width: 1200px;
         gap: 30px;
-        margin-top: 1000px; /* TAMBAHKAN BARIS INI */
+        /* margin-top: 1000px; DIHAPUS BARIS INI */
       }
 
       .overlay,
       .time-card {
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.6);
         padding: 40px;
         border-radius: 16px;
         text-align: center;
@@ -106,7 +106,7 @@
       }
 
       .time-card {
-        padding: 25px; /* Sedikit lebih tipis dari .overlay */
+        padding: 25px;
       }
 
       .time-card h2 {
@@ -219,7 +219,6 @@
 
       /* --- RESPONSIVE DESIGN --- */
 
-      /* Untuk Tablet dan Layar Lebih Kecil (max-width: 992px) */
       @media (max-width: 992px) {
         .container {
           width: 95%;
@@ -232,16 +231,14 @@
         }
       }
 
-      /* Untuk Ponsel (max-width: 768px) */
       @media (max-width: 768px) {
         body {
-          /* Mengubah alignment untuk mobile agar tampilan dari atas */
           align-items: flex-start;
-          padding-top: 40px; /* Beri jarak dari atas */
+          padding-top: 40px;
         }
 
         .container {
-          flex-direction: column; /* Susun card secara vertikal */
+          flex-direction: column;
           width: 95%;
           gap: 20px;
         }
@@ -286,7 +283,6 @@
         }
       }
 
-      /* Untuk Ponsel Sangat Kecil (max-width: 480px) */
       @media (max-width: 480px) {
         h1 {
           font-size: 20px;
@@ -306,9 +302,9 @@
         }
       }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
       <div class="overlay">
         <h1>Website Sedang Dalam Pengembangan</h1>
@@ -336,19 +332,8 @@
 
         <div class="info-box">
           <h3><i class="fas fa-map-marker-alt"></i> Informasi Kontak</h3>
-          <p><i class="fas fa-phone"></i> Telepon: (021) 1234-5678</p>
-          <p><i class="fas fa-envelope"></i> Email: info@pondokalikhlas.id</p>
-          <p>
-            <i class="fas fa-map-marked-alt"></i> Alamat: Jl. Pendidikan No.
-            123, Jakarta Selatan
-          </p>
-        </div>
-
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <p><i class="fas fa-map-marked-alt"></i> Alamat: Jl. KH. Ahmad Sugriwa, Kp. Lengkong Barang RT 01/RW 02, Desa Iwul, Kec. Parung, Kab. Bogor 16330</p>
+          <p><i class="fas fa-phone"></i> Telepon / WhatsApp: 081413241748</p>
         </div>
       </div>
 
@@ -407,7 +392,10 @@
 
       // Hitung mundur ke tanggal tertentu (contoh: 1 Juni 2024)
       function updateCountdown() {
-        const targetDate = new Date("June 1, 2024 00:00:00").getTime();
+        // Set target date to 3 months from now
+        const targetDate = new Date();
+        targetDate.setMonth(targetDate.getMonth() + 3);
+        
         const now = new Date().getTime();
         const timeLeft = targetDate - now;
 
@@ -442,5 +430,5 @@
       setInterval(updateClock, 1000);
       setInterval(updateCountdown, 1000);
     </script>
-  </body>
+</body>
 </html>
